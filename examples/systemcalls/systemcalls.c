@@ -115,6 +115,8 @@ bool do_exec_redirect(const char *outputfile, int count, ...) {
    * rest of the behaviour is same as do_exec()
    *
    */
+  fflush(stdout);
+  fflush(stderr);
   pid_t pid = fork();
   if (pid == -1) {
     return false;
